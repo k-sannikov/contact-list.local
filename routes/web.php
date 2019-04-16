@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::group(['namespace' => 'Task'], function () {
+    // маршрут для ресурсного контроллера TaskController
+    Route::resource('tasks', 'TaskController');
+});
