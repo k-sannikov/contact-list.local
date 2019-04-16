@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::group(['namespace' => 'Task'], function () {
-    // маршрут для ресурсного контроллера TaskController
-    Route::resource('tasks', 'TaskController');
+Route::group(['namespace' => 'Contact', 'middleware' => 'auth'], function () {
+    // маршрут для ресурсного контроллера ContactController
+    Route::resource('contacts', 'ContactController');
 });

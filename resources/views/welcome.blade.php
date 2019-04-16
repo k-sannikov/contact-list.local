@@ -76,7 +76,7 @@
             <div class="links">
               @if (Route::has('login'))
                 @auth
-                    <a href="#">Contacts</a>
+                    <a href="{{ route('contacts.index') }}">Contacts</a>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}
