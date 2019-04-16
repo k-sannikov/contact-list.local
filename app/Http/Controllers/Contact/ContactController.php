@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Contact;
 
 use App\Model\Contact;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 use App\Http\Controllers\Controller;
 
 class ContactController extends Controller
@@ -38,7 +38,7 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return view
      */
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
         Contact::create($request->all());
         return redirect()->route('contacts.index');
@@ -76,7 +76,7 @@ class ContactController extends Controller
      * @param  int  $id
      * @return view
      */
-    public function update(Request $request, $id)
+    public function update(ContactRequest $request, $id)
     {
         $contact = Contact::findOrFail($id);
         $contact->update($request->except('user_id'));
