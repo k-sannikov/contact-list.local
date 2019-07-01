@@ -43,7 +43,7 @@
         @empty
         <tr>
           <td colspan="3">
-            <h3 class="text-center">Текущие задачи отсутствуют</h3>
+            <h3 class="text-center">Контакты отсутствуют</h3>
           </td>
         </tr>
         @endforelse

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Contact;
 
 use App\Model\Contact;
 use Illuminate\Support\Facades\Auth;
+// use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Http\Controllers\Controller;
 
@@ -17,8 +18,8 @@ class ContactController extends Controller
     public function index()
     {
         $contacts = Contact::where('user_id', Auth::id())
-                    ->orderBy('surname')
-                    ->get();
+            ->orderBy('surname')
+            ->get();
         return view('contact.index', compact('contacts'));
     }
 

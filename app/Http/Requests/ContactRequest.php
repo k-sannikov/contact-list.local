@@ -36,12 +36,12 @@ class ContactRequest extends FormRequest
             'name' => 'required|max:100',
             'patronymic' => 'max:100',
             'organization' => 'max:255',
-            'INN' => 'max:12',
+            'INN' => 'nullable|size:12',
             'department' => 'max:255',
             'position' => 'max:255',
             'phone_work' => 'required|phone_number|max:12',
-            'phone_mobile' => 'phone_number|max:12',
-            'email' => 'email_check|max:255',
+            'phone_mobile' => 'nullable|phone_number|max:12',
+            'email' => 'nullable|email_check|max:255',
         ];
     }
 
@@ -60,7 +60,7 @@ class ContactRequest extends FormRequest
             'name.max' => 'Имя должно быть не более :max символов',
             'patronymic.max' => 'Отчество должно быть не более :max символов',
             'organization.max' => 'Наименование организации должно быть не более :max символов',
-            'INN.max' => 'ИНН должен быть не более :max символов',
+            'INN.size' => 'ИНН должен состоять из :size символов',
             'department.max' => 'Наименование отдела должно быть не более :max символов',
             'position.max' => 'Наименование должности должно быть не более :max символов',
             'phone_work.max' => 'Рабочий телефон должен быть не более :max символов',
